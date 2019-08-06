@@ -1,0 +1,30 @@
+{% if admin == False %}
+{% extends "layout.html" %}
+{% else %}
+{% extends "admin-layout.html" %}
+{% endif %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h3 style="display: inline;">Riley's Candles
+        <small class="text-muted">~ homemade artisan candles</small>
+        </h3>
+        {% if admin == True %}
+        <div class="view_btn">
+            <a class="btn btn-outline-primary" href="/admin">Admin Access</a>
+        </div>
+        {% else %}
+        <div class="view_btn">
+            <a class="btn btn-outline-primary" href="/products">View our candles</a>
+        </div>
+        {% endif %}
+
+        <img src="https://wallflower.com/wp-content/uploads/home-fire-safety-tips-candles.jpg">
+
+        <p style="color: black">Store Credit: {{ "${:,.2f}".format(credit) }}</p>
+    </div>
+{% endblock %}

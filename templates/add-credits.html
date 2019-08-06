@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Credits
+{% endblock %}
+
+{% block main %}
+    <div>
+        <div id="account_balance">
+            <p>Current Account Balance: {{ "${:,.2f}".format(credit) }}</p>
+        </div>
+        <form id="add-credit" action="add-credits" method="post">
+            <p>How many credits would you like to add to your account?</p>
+            <fieldset class="form-group">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="addCredits" id="add1" value="1" checked="">$1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="addCredits" id="add5" value="5">$5
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="addCredits" id="add10" value="10">$10
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="addCredits" id="add20" value="20">$20
+                    </label>
+            </fieldset>
+            <button class="btn btn-outline-primary" type="submit">Add Cash to Account</button>
+        </form>
+    </div>
+{% endblock %}

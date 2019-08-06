@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h3 style="display: inline;">Riley's Candles
+        <small class="text-muted">~ Your Account</small>
+        </h3>
+        <div id="account_balance">
+            <p>Your Account Balance: {{ "${:,.2f}".format(credit) }}</p>
+        </div>
+        <div class="account_btn">
+            <a class="btn btn-outline-primary" href="/add-credits">Add Cash to Account</a>
+        </div>
+        <div class="account_btn">
+            <a class="btn btn-outline-primary" href="/change">Change Password</a>
+        </div>
+        <div class="home_btn">
+            <a class="btn btn-outline-info" href="/">Return Home</a>
+        </div>
+    </div>
+{% endblock %}

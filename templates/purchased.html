@@ -1,0 +1,67 @@
+{% if admin_status == 0 %}
+{% extends "layout.html" %}
+{% else %}
+{% extends "admin-layout.html" %}
+{% endif %}
+
+{% block title %}
+    Thank you!
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h3>Thank you for your purchase!</h3>
+        <div id="summary">
+            <h5 id="order_summary">Order Summary</h5>
+            <div class="summary-line">
+                <div class="summary-left">
+                    <p>Product:</p>
+                </div>
+                <div class="summary-right">
+                    <p>{{ purchased_product }} Candle</p>
+                </div>
+            </div>
+            <div class="summary-line">
+                <div class="summary-left">
+                    <p>Cost per unit:</p>
+                </div>
+                <div class="summary-right">
+                    <p>{{ "${:,.2f}".format(price) }}</p>
+                </div>
+            </div>
+            <div class="summary-line">
+                <div class="summary-left">
+                    <p>Quantity:</p>
+                </div>
+                <div class="summary-right">
+                    <p>{{ sale_quantity }} Candles</p>
+                </div>
+            </div>
+            <div class="summary-line">
+                <div class="summary-left">
+                    <p>Total Cost:</p>
+                </div>
+                <div class="summary-right">
+                    <p>{{ "${:,.2f}".format(sale_cost) }}</p>
+                </div>
+            </div>
+            <div class="summary-line">
+                <div class="summary-left">
+                    <p>Balance:</p>
+                </div>
+                <div class="summary-right">
+                    <p>{{ "${:,.2f}".format(cash_after) }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if admin_status == 0 %}
+    <div class="home_btn">
+        <a class="btn btn-outline-primary" href="/">Return Home</a>
+    </div>
+    {% else %}
+    <div class="back_btn">
+        <a class="btn btn-outline-secondary btn-sm" href="/admin">Back</a>
+    </div>
+    {% endif %}
+{% endblock %}

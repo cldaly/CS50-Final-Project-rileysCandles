@@ -1,0 +1,38 @@
+{% extends "admin-layout.html" %}
+
+{% block title %}
+    Inventory
+{% endblock %}
+
+{% block main %}
+    <h4>Candle Inventory</h4>
+    <div id="inv_table">
+        <table width=100% align="center">
+            <tr>
+                <th>Candle Name</th>
+                <th>Picture</th>
+                <th>Description</th>
+                <th>Unit Cost</th>
+                <th>Sale Price</th>
+                <th># in Stock</th>
+                <th>Add Stock</th>
+            </tr>
+            {% for product in inventory_stock %}
+            <tr>
+                <td align="left">{{ product.product }} Candle</td>
+                <td><img class="inv_pic" src="{{ product.img_url }}" alt="{{ product.product }} Candle"></td>
+                <td>{{ product.description }}</td>
+                <td>{{ "${:,.2f}".format(product.cost) }}</td>
+                <td>{{ "${:,.2f}".format(product.price) }}</td>
+                <td>{{ product.quantity }}</td>
+                <td><form action="/restock" method="get">
+                    <button name="restock" type="submit" value="{{ product.product }}" class="buy_again">Buy</button>
+                </form></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="back_btn">
+        <a class="btn btn-outline-secondary btn-sm" href="/admin">Back</a>
+    </div>
+{% endblock %}

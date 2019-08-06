@@ -1,0 +1,27 @@
+{% extends "admin-layout.html" %}
+
+{% block title %}
+    App Admin
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h3 style="display: inline;">Riley's Candles
+        <small class="text-muted">~ App Admin</small>
+        </h3>
+        <div class="admin_btn">
+            <a class="btn btn-outline-primary" href="/inventory">Inventory</a>
+        </div>
+        <div class="admin_btn">
+            <a class="btn btn-outline-primary" href="/sales">Sale History</a>
+        </div>
+        <div class="admin_btn">
+            <a class="btn btn-outline-primary" href="/restock-history">Restock History</a>
+        </div>
+        <div class="admin_btn">
+            <a class="btn btn-outline-primary" href="/new">Add New Candle</a>
+        </div>
+
+        <p>Account Balance: {{ "${:,.2f}".format(credit) }}</p>
+    </div>
+{% endblock %}

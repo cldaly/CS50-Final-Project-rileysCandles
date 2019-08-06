@@ -1,0 +1,33 @@
+{% extends "admin-layout.html" %}
+
+{% block title %}
+    New Candle - Confirmation
+{% endblock %}
+
+{% block main %}
+    <h4>Confirmed!</h4>
+    <div class="product">
+        <div class="product_title">
+            <h4>{{ product }} Candle</h4>
+        </div>
+        <div class="product_pic">
+            <img src="{{ img_url }}" alt="{{ product }} Candle">
+        </div>
+        <div class="description">
+            <p>Description: {{ description }}</p>
+        </div>
+        <div class="cost">
+            <p>Cost: {{ "${:,.2f}".format(cost) }}</p>
+        </div>
+        <div class="price">
+            <p>Price: {{ "${:,.2f}".format(price) }}</p>
+        </div>
+        <div class="quantity">
+            <p>{{ quantity }} candles added to inventory, total cost: {{ "${:,.2f}".format(total_cost) }}</p>
+            <p>Remaining Balance: {{ "${:,.2f}".format(credit) }}</p>
+        </div>
+    </div>
+    <div class="back_btn">
+        <a class="btn btn-outline-secondary btn-sm" href="/admin">Back</a>
+    </div>
+{% endblock %}

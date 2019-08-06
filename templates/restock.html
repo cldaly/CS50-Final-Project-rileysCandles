@@ -1,0 +1,43 @@
+{% extends "admin-layout.html" %}
+
+{% block title %}
+    Restock
+{% endblock %}
+
+{% block main %}
+
+    <div class="product_buy">
+        <div class="product_title">
+            <h4>{{ product_buy.product }} Candle</h4>
+        </div>
+        <div class="product_pic">
+            <img src="{{ product_buy.img_url }}" alt="{{ product_buy.product }} Candle">
+        </div>
+        <div class="description">
+            <p>{{ product_buy.description }}: </p>
+            <p id="price_calc">{{ "${:,.2f}".format(product_buy.cost) }}</p>
+        </div>
+        <div>
+            <form action="/restock" method="post">
+                <p class="qty_prompt">Please select quantity to purchase</p>
+                <select name="quantity" id="qty_select" onchange="confirmPrice()" required>
+                    <option disabled value selected>Qty.</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+                <button name="purchasing" type="submit" class="buy_button" value="{{ product_buy.product }}">Purchase</button>
+            </form>
+        </div>
+        <p class="account_balance" id="balance_calc">Account Balance: {{ "${:,.2f}".format(credit) }}</p>
+        <div class="calculation_area">
+            <p>Total Cost: </p>
+            <p id="calc_output"></p>
+        </div>
+    </div>
+    <div class="back_btn">
+        <a class="btn btn-outline-secondary btn-sm" href="/inventory">Inventory</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "admin-layout.html" %}
+
+{% block title %}
+    Add a New Candle
+{% endblock %}
+
+{% block main %}
+    <h4>Add a New Candle</h4>
+    <div id="new_candle">
+        <form action="/new" method="post" autocomplete="off">
+            <div class="new_row">
+                <div class="new_left">
+                    <label id="product_name" for="product">Product Name:</label>
+                </div>
+                <div class="new_right">
+                    <input type="text" name="product" id="product" class="form-control" placeholder="Product Name" required>
+                </div>
+            </div>
+            <div class="new_row">
+                <div class="new_left">
+                    <label id="product_description" for="description">Description:</label>
+                </div>
+                <div class="new_right">
+                    <textarea style="height: 50px; resize: vertical;" name="description" id="description" class="form-control" placeholder="Enter product description here..." required></textarea>
+                </div>
+            </div>
+            <div class="new_row">
+                <div class="new_left">
+                    <label id="product_cost" for="cost">Product Cost:</label>
+                </div>
+                <div class="new_right">
+                    <input type="number" name="cost" id="cost" class="form-control" placeholder="Product Cost" min="0.01" max="100" step="0.01" oninput="newCost()" required>
+                </div>
+            </div>
+            <div class="new_row">
+                <div class="new_left">
+                    <label id="product_price" for="price">Product Price:</label>
+                </div>
+                <div class="new_right">
+                    <input type="number" name="price" id="price" class="form-control" placeholder="Product Price" min="0.5" max="100" step="0.01" required>
+                </div>
+            </div>
+            <div class="new_row">
+                <div class="new_left">
+                    <label id="product_url" for="img_url">Image URL:</label>
+                </div>
+                <div class="new_right">
+                    <input type="url" name="img_url" id="img_url" class="form-control" placeholder="Image URL" required>
+                </div>
+            </div>
+            <div class="new_row">
+                <div class="new_left">
+                    <label id="product_qty" for="quantity">Quantity</label>
+                </div>
+                <div class="new_right">
+                    <select name="quantity" id="qty_select_new" onchange="confirmNewPrice()" class="form-control" disabled required>
+                    <option disabled value="Blank" selected>Qty.</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+                </div>
+            </div>
+            <button class="buy_button" type="submit">Submit</button>
+        </form>
+        <p class="account_balance" id="balance_calc_new">Account Balance: {{ "${:,.2f}".format(credit) }}</p>
+        <div class="calculation_area">
+            <p>Total Cost: </p>
+            <p id="calc_output_new"></p>
+        </div>
+    </div>
+    <div class="back_btn">
+        <a class="btn btn-outline-secondary btn-sm" href="/admin">Back</a>
+    </div>
+{% endblock %}

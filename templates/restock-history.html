@@ -1,0 +1,43 @@
+{% extends "admin-layout.html" %}
+
+{% block title %}
+    Restock History
+{% endblock %}
+
+{% block main %}
+    <div class="all_sales">
+        <h4>Log of Inventory Purchases:</h4>
+        <div class="all_sales_table">
+            <table>
+                <thead>
+                    <tr>
+                        <th align="left">Candle Name</th>
+                        <th>Candles Bought</th>
+                        <th>Purchase Cost</th>
+                        <th>Date Purchased</th>
+                    </tr>
+                <tbody>
+                    {% for transaction in transactions %}
+                    <tr>
+                        <td align="left">{{ transaction.product }} Candle</td>
+                        <td>{{ transaction.units }}</td>
+                        <td>-{{ "${:,.2f}".format(transaction.sale * -1) }}</td>
+                        <td>{{ transaction.transacted }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr class="totals">
+                        <td style="text-align:right">Totals:</td>
+                        <td>{{ total_units }}</td>
+                        <td>-{{ "${:,.2f}".format(total_sales) }}</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div class="back_btn">
+        <a class="btn btn-outline-secondary btn-sm" href="/admin">Back</a>
+    </div>
+{% endblock %}

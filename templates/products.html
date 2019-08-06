@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Products
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h2 style="margin-bottom: 15px">~ Products ~</h2>
+    </div>
+    <div id="products">
+        {% for product in products %}
+        <div class="product">
+            <div class="product_title">
+                <h4>{{ product.product }} Candle</h4>
+            </div>
+            <div class="product_pic">
+                <img src="{{ product.img_url }}" alt="{{ product.product }} Candle">
+            </div>
+            <div class="description">
+                <p>{{ product.description }}</p>
+            </div>
+            <div class="product_price">
+                <p>{{ "${:,.2f}".format(product.price) }}</p>
+            </div>
+            <div>
+                <form action="/buy" method="get">
+                    <button name="p" type="submit" value="{{ product.product }}" class="buy_button">Buy</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

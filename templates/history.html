@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Again
+{% endblock %}
+
+{% block main %}
+    {% if number_of_transactions == 0 %}
+    <h4>Looks like you haven't purchased anything yet!</h4>
+    <p class="text-primary">Feel free to check out our selection of candels here:</p>
+    <div class="view_btn">
+        <a class="btn btn-outline-primary" href="/products">View our candles</a>
+    </div>
+    {% else %}
+    <table width=100% align="center" style="text-align:left">
+        <tr>
+            <th align="left">Candle Name</th>
+            <th>Candles Bought</th>
+            <th>Total Cost</th>
+            <th>Date Purchased</th>
+            <th>Buy Again</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td align="left">{{ transaction.product }} Candle</td>
+            <td>{{ transaction.units * -1 }}</td>
+            <td>{{ "${:,.2f}".format(transaction.sale) }}</td>
+            <td>{{ transaction.transacted }}</td>
+            <td><form action="/buy" method="get">
+                <button name="p" type="submit" value="{{ transaction.product }}" class="buy_again">Buy</button>
+            </form></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,284 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: 2em;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+    padding: 10px 20px 5px 20px;
+}
+
+.view_btn
+{
+    padding: 15px;
+}
+
+.admin_btn {
+    padding: 20px;
+
+}
+
+.account_btn {
+    padding: 20px;
+
+}
+
+#account_balance {
+    padding-top: 20px;
+    color: black;
+    vertical-align: middle;
+}
+
+.p-5 {
+    padding-top: 2rem !important;
+}
+
+.qty_prompt {
+    color: black;
+    margin: 0;
+}
+
+.account_balance {
+    margin-top: 1em;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #999;
+}
+
+.calculation_area {
+    margin-bottom: 1em;
+}
+
+.calculation_area p {
+    display: inline;
+}
+
+.description p {
+    display: inline;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    max-width: 575px;
+    width: 100%;
+    border: 1px solid black;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.product_buy {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid black;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.product_title {
+    background-color: #eee;
+    padding: 10px;
+}
+
+.product_title h4 {
+    margin: 0;
+    justify-content: center;
+}
+
+.buy_button {
+    background-color: #59ace0;
+    border-radius: 4px;
+    color: white;
+    font-size: 1em;
+    height: 35px;
+    width: 80px;
+    margin: 5px;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+.buy_button:hover {
+    background-color: #247aaf;
+    transition: background-color 0.5s;
+    justify-content: center;
+}
+
+.buy_again {
+    background-color: #59ace0;
+    border-radius: 4px;
+    color: white;
+    font-size: 1em;
+    height: 25px;
+    width: 60px;
+    margin: 5px;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+.buy_again:hover {
+    background-color: #247aaf;
+    transition: background-color 0.5s;
+    justify-content: center;
+}
+
+.product_price p {
+    margin-bottom: 5px;
+}
+
+.home_btn {
+    padding: 15px;
+}
+
+#summary {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto;
+    max-width: 350px;
+    width: 100%;
+}
+
+.summary-line p {
+    vertical-align: middle;
+    margin: 10px 0;
+}
+
+.summary-left {
+    color: black;
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+    vertical-align: middle;
+}
+
+.summary-right {
+    display: inline-block;
+    text-align: left;
+    width: 40%;
+    vertical-align: middle;
+}
+
+#order_summary {
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+}
+
+th {
+    color: black;
+}
+
+.form-check {
+    text-align: left;
+    margin: auto;
+    width: 100px;
+}
+
+#add-credit {
+    color: black;
+}
+
+.inv_pic {
+    max-width: 120px;
+    width: 100%;
+}
+
+#inv_table {
+    text-align: left;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+tr:hover {background-color: #f5f5f5;}
+
+.all_sales {
+    text-align: left;
+}
+
+.all_sales_table {
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    border-collapse: separate;
+}
+
+.all_sales_table table {
+    width: 100%;
+}
+
+.totals {
+    border-top: 1px solid #999;
+    color: #999;
+    border-collapse: collapse;
+}
+
+.back_btn {
+    margin-top: 20px;
+}
+
+#new_candle {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto;
+    max-width: 600px;
+    width: 100%;
+}
+
+.new_row {
+    vertical-align: middle;
+    margin: 20px 0;
+}
+
+.new_left {
+    color: black;
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+    vertical-align: middle;
+}
+
+.new_right {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.new_right .form-control {
+    width: 100%;
+}
+
+
+.quantity {
+    border-top: 1px solid #999;
+    padding-top: 5px;
+}
